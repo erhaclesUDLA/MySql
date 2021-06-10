@@ -1,0 +1,44 @@
+-----1------
+SELECT users.first_name,users.last_name,user2.first_name,user2.last_name 
+FROM users 
+LEFT JOIN friendships ON users.id=friendships.user_id
+inner JOIN users as user2 ON user2.id = friendships.friend_id
+
+-----2------
+SELECT count(*) as amistades
+FROM users 
+LEFT JOIN friendships ON users.id=friendships.user_id
+inner JOIN users as user2 ON user2.id = friendships.friend_id
+
+-----3------
+SELECT users.first_name,users.last_name,count(*) as amistades
+FROM users 
+LEFT JOIN friendships ON users.id=friendships.user_id
+inner JOIN users as user2 ON user2.id = friendships.friend_id
+group by users.id
+
+-----4------
+insert into users(id,first_name,last_name,created_at,updated_at) values ( '6','Luis','Bone','2021-06-10 08:30:21',NULL)
+insert into friendships(id,user_id,friend_id,created_at,updated_at) values ( '7','6','2',NULL,NULL)
+insert into friendships(id,user_id,friend_id,created_at,updated_at) values ( '8','6','4',NULL,NULL)
+insert into friendships(id,user_id,friend_id,created_at,updated_at) values ( '9','6','5',NULL,NULL)
+
+-----5------
+SELECT users.first_name,users.last_name,user2.first_name,user2.last_name 
+FROM users 
+LEFT JOIN friendships ON users.id=friendships.user_id
+inner JOIN users as user2 ON user2.id = friendships.friend_id
+where friendships.user_id=2
+order by user2.first_name,user2.last_name
+
+-----6------
+delete from friendships
+where friendships.friend_id=5 
+and friendships.user_id=2
+
+-----7------
+SELECT user2.first_name,user2.last_name 
+FROM users 
+LEFT JOIN friendships ON users.id=friendships.user_id
+inner JOIN users as user2 ON user2.id = friendships.friend_id
+group by friendships.friend_id

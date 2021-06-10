@@ -1,0 +1,78 @@
+----1-----
+select monthname(charged_datetime) as month,sum(amount) as reveneu
+from billing
+where year(charged_datetime)=2012
+and month(charged_datetime)=3
+
+----2-----
+select clients.client_id,clients.first_name,clients.last_name, sum(amount) as reveneu
+from billing,clients
+where billing.client_id=clients.client_id
+and clients.client_id=2
+
+
+----3-----
+select clients.client_id,clients.first_name,clients.last_name,domain_name
+from sites
+inner join clients on sites.client_id=clients.client_id
+where clients.client_id=10
+
+
+----4-----
+select clients.client_id,year(created_datetime),monthname(created_datetime),count(*) as sitios
+from clients 
+inner join sites on sites.client_id=clients.client_id
+where clients.client_id=1
+group by year(created_datetime),month(created_datetime)
+
+select clients.client_id,year(created_datetime),monthname(created_datetime),count(*) as sitios
+from clients 
+inner join sites on sites.client_id=clients.client_id
+where clients.client_id=20
+group by year(created_datetime),month(created_datetime)
+
+----5-----
+select domain_name,leads_id,registered_datetime
+from sites
+inner join  leads on leads.site_id=sites.site_id
+where leads.registered_datetime>='2011-01-01' 
+and leads.registered_datetime<='2011-02-15 23:59:59'
+
+----6------
+select clients.first_name,clients.last_name,count(*) as contar from clients
+left join  sites on clients.client_id=sites.client_id
+left join  leads on sites.site_id=leads.site_id
+where registered_datetime>='2011-01-01' 
+and registered_datetime<='2011-12-31 23:59:59' 
+group by clients.client_id
+
+----7------
+select clients.first_name,clients.last_name,count(*) as contar,monthname(registered_datetime) 
+from clients
+left join  sites on clients.client_id=sites.client_id
+left join  leads on sites.site_id=leads.site_id
+where registered_datetime>='2011-01-01' 
+and registered_datetime<='2011-06-30 23:59:59' 
+group by clients.client_id,monthname(registered_datetime)
+
+
+----8------
+select clients.first_name,clients.last_name,domain_name,count(*) as contar
+from clients
+left join  sites on clients.client_id=sites.client_id
+left join  leads on sites.site_id=leads.site_id
+where registered_datetime>='2011-01-01' 
+and registered_datetime<='2011-12-31 23:59:59' 
+group by clients.client_id,sites.site_id
+
+-----9-----
+select clients.first_name,last_name,sum(amount),year(charged_datetime),monthname(charged_datetime) 
+from billing
+inner join clients on billing.client_id=clients.client_id
+group by clients.client_id,year(charged_datetime),month(charged_datetime)
+
+-----10-----
+select clients.first_name,clients.last_name,GROUP_CONCAT(DISTINCT domain_name ORDER BY domain_name DESC SEPARATOR " / ") as domain 
+from clients
+inner join sites on clients.client_id=sites.client_id
+group by clients.client_id
