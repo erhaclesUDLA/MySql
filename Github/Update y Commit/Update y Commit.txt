@@ -1,0 +1,38 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\Alienware-R3\Desktop\git_demo> git init
+Initialized empty Git repository in C:/Users/Alienware-R3/Desktop/git_demo/.git/        
+PS C:\Users\Alienware-R3\Desktop\git_demo> git status
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        demo_index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\Alienware-R3\Desktop\git_demo> git add .
+PS C:\Users\Alienware-R3\Desktop\git_demo> git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using     
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+PS C:\Users\Alienware-R3\Desktop\git_demo> git remote add origin https://github.com/erhaclesUDLA/git_demo.git
+PS C:\Users\Alienware-R3\Desktop\git_demo> git branch -M main
+PS C:\Users\Alienware-R3\Desktop\git_demo> git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 215 bytes | 215.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/erhaclesUDLA/git_demo.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+PS C:\Users\Alienware-R3\Desktop\git_demo>

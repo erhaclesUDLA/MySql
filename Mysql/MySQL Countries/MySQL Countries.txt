@@ -1,0 +1,50 @@
+select countries.name 
+from cities,languages,countries
+where countries.id=cities.country_id
+and countries.id=languages.country_id
+and languages.language like '%Slovene%'
+group by countries.name;
+
+select countries.name,count(*) 
+from cities,countries
+where countries.id=cities.country_id
+group by countries.name;
+
+select countries.name,cities.name,cities.population 
+from cities,countries
+where countries.id=cities.country_id
+and countries.name='Mexico'
+and cities.population>=500000
+order by countries.name,cities.name;
+
+select countries.name,cities.name,languages.language,languages.percentage
+from cities,languages,countries
+where countries.id=cities.country_id
+and countries.id=languages.country_id
+and languages.percentage>=89
+order by countries.name,cities.name;
+
+
+select countries.name,cities.name,countries.population,countries.surface_area
+from cities,countries
+where countries.id=cities.country_id
+and countries.population>=100000
+and countries.surface_area<501;
+
+
+select * from countries
+where countries.government_form like '%monar%' and capital>200 and life_expectancy>75;
+
+
+select countries.name,cities.name,cities.population,cities.district
+from cities,countries
+where countries.id=cities.country_id
+and countries.name='Argentina'
+and countries.population>=500000
+order by countries.name,cities.name;
+
+
+
+select countries.region,count(*) as contar from countries
+group by countries.region
+order by contar desc;

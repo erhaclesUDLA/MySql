@@ -1,0 +1,12 @@
+insert into usuarios(nombre,direccion,telefono) values('Luis Bone','Carcelen','0996800052');
+insert into usuarios(nombre,direccion,telefono) values('Edwin Pilataxi','Comite','0996800051');
+insert into usuarios(nombre,direccion,telefono) values('Richard Bonilla','Centro','0996800053');
+insert into usuarios(nombre,direccion,telefono) values('Sandra Benalcazar','Carcelen','0994795533');
+
+
+select * from usuarios;
+
+
+delete from usuarios where id=3;
+
+update usuarios set nombre='Bone Luis' where id=1; 

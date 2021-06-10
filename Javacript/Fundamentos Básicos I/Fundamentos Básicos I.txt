@@ -1,0 +1,157 @@
+function t_uno(){
+  for(var i=1;i<=255;i++){
+    console.log(i);
+  }
+}
+t_uno();
+
+
+function t_dos(){
+  for(var i=1;i<=1000;i++){
+    if (i % 2  == 0){
+    console.log(i);
+    }
+  }
+}
+t_dos();
+
+
+function t_tres(){
+  var sum=0;
+  for(var i=1;i<=5000;i++){
+    if (i % 2  != 0){    
+      sum+=i;
+    }
+  }
+  return(sum);
+}
+console.log(t_tres());
+
+
+function t_cuatro(x){
+  var sum=0;
+  for(var i=0;i<x.length;i++){
+      sum+=x[i];
+  }
+  return(sum);
+}
+console.log(t_cuatro([1,2,5]));
+console.log(t_cuatro([-5,2,5,12]));
+
+
+function t_cinco(x){
+  var mayor=0;
+  for(var i=0;i<x.length;i++){
+      if (x[i]>mayor){
+        mayor=x[i]
+      }
+  }
+  return(mayor);
+}
+console.log(t_cinco([1,10,5]));
+
+function t_seis(x){
+  var sum=0;
+  var avg=0;
+  for(var i=0;i<x.length;i++){
+        sum+=x[i]
+  }
+  if (x.length>=1){
+    avg=sum/x.length;
+  }
+  return(avg);
+}
+console.log(t_seis([1,10,5,89]));
+
+
+function t_siete(){
+  var matriz=[];
+  for(var i=1;i<=50;i++){
+    if (i % 2  != 0){    
+      matriz.push(i);
+    }
+  }
+  return matriz;
+}
+console.log(t_siete());
+
+function t_ocho(x,y){
+  var matriz=[];
+  for(var i=0;i<x.length;i++){
+    if (x[i]> y){    
+      matriz.push(x[i]);
+    }
+  }
+  return matriz;
+}
+console.log(t_ocho([10,1,2,4,1,6],3));
+
+
+function t_nueve(x){
+  for(var i=0;i<x.length;i++){  
+      x[i]=x[i]*x[i];
+  }
+  return x;
+}
+console.log(t_nueve([10,1,2,4,1,6]));
+
+function t_diez(x){
+  for(var i=0;i<x.length;i++){
+    if (x[i]<0){
+      x[i]=0;
+    }
+  }
+  return x;
+}
+console.log(t_diez([10,1,-2,4,-1,6]));
+
+
+function t_once(x){
+  var min=0;
+  var max=0;
+  var avg=0;
+  var sum=0;
+  var arr=[];
+  if (x.length>=1){ 
+    min=x[0];
+    max=x[0];
+    for(var i=0;i<x.length;i++){
+      if (x[i]<min){
+        min=x[i];
+      }
+      if (x[i]>max){
+        max=x[i];
+      }
+      sum+=x[i];
+    }
+    avg=sum/x.length;
+  }
+  arr.push(max);
+  arr.push(min);
+  arr.push(avg);
+  return arr;
+}
+console.log(t_once([-2,-1]));
+
+
+function t_doce(x){
+  var temp=0;
+  if (x.length>=2){ 
+    temp=x[0];
+    x[0]=x[x.length-1];
+    x[x.length-1]=temp;
+  }
+  return x;
+}
+console.log(t_doce([-2,3,4,5,6,7,-1]));
+
+
+function t_trece(x){
+  for(var i=0;i<x.length;i++){
+    if (x[i]<0){
+      x[i]='Dojo';
+    }
+  }
+  return x;
+}
+console.log(t_trece([10,1,-2,4,-1,6]));

@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: 1px solid dotted red;
+}
+
+.contenedor {
+    height: auto;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    display: block;
+    margin: 0px auto;
+}
+
+div {
+    height: 60px;
+    width: 500px;
+    border: 3px solid coral;
+    justify-content: center;
+    margin: 3px auto;
+    padding: 5px 5px 5px 5px;
+}
+
+button {
+    border: 1px solid darkslategray;
+    height: 25px;
+    width: 100px;
+    font-family: verdana;
+}
+
+h1 {
+    font-family: verdana;
+    text-align: center;
+}
+
+h3 {
+    font-family: verdana;
+}
+
+p {
+    font-family: verdana;
+}
+
+.selected {
+    color: blue;
+}
+
+input {
+    border: 1px solid blue;
+}

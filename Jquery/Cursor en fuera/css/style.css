@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: 1px solid dotted red;
+}
+
+.container {
+    height: auto;
+    width: 550px;
+    display: inline-block;
+    margin: 0px auto;
+    border: 3px solid coral;
+    padding: 50px 50px 50px 50px;
+}
+
+.box {
+    height: 250px;
+    width: 250px;
+    border: 3px solid coral;
+    margin: 3px auto;
+    padding: 5px 5px 5px 5px;
+    display: inline-block;
+}
+
+.imagen {
+    height: 230px;
+    width: 230px;
+}

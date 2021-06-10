@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: 1px solid dotted red;
+}
+
+.container {
+    height: auto;
+    width: 900px;
+    display: inline-block;
+    margin: 0px auto;
+    border: 3px solid coral;
+    padding: 100px 100px 100px 100px;
+}
+
+.box {
+    height: 200px;
+    width: 200px;
+    border: 3px solid coral;
+    margin: 3px auto;
+    padding: 5px 5px 5px 5px;
+    display: inline-block;
+}
+
+.imagen {
+    height: 180px;
+    width: 180px;
+}
+
+button {
+    height: 25px;
+    width: 100px;
+    border: 1px solid coral;
+}

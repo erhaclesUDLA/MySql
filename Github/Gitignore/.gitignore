@@ -1,0 +1,4 @@
+# ignora cualquier archivo llamado "secret.txt"
+secret.js
+*.txt
+log*

@@ -1,0 +1,213 @@
+function t_uno(x){
+  for(var i=0;i<x.length;i++){
+    if (x[i]>0){
+      x[i]='big';
+    }
+  }
+  return x;
+}
+console.log(t_uno([10,1,-2,4,-1,6]));
+
+
+function t_dos(x){
+  var min=0;
+  var max=0;
+  if (x.length>=1){ 
+    min=x[0];
+    max=x[0];
+    for(var i=0;i<x.length;i++){
+      if (x[i]<min){
+        min=x[i];
+      }
+      if (x[i]>max){
+        max=x[i];
+      }
+    }
+  }
+  for(var i=0;i<x.length;i++){
+    if (x[i]==min){
+        x[i]='print';
+      }
+    if (x[i]==max){
+        x[i]='return';
+      }
+  }
+  return x;
+  
+}
+console.log(t_dos([-2,-1,-16,-16,5,6,9]));
+
+
+
+function t_tres(x){
+  
+  if (x.length>=2){
+    var posicion=0;
+    for(var i=0;i<x.length;i++){
+      if (x[i]%2 != 0){
+        x[i]='return';
+      }
+     }
+    x[x.length-2]='print';
+  }
+  return x;
+}
+console.log(t_tres([-2,-1,-16,6,9]));
+
+
+function t_cuatro(x){
+    var arr=[];
+    for(var i=0;i<x.length;i++){
+        arr.push(x[i]*x[i]);
+     }
+  
+  return arr;
+}
+console.log(t_cuatro([-2,-1,-16,6,9]));
+
+
+function t_cinco(x){
+    var cont=0;  
+    if (x.length>=2){
+      for(var i=0;i<x.length;i++){
+          if(x[i]>=0){
+            cont++;
+          }
+       }
+      x[x.length-1]=cont;
+    }   
+  return x;
+}
+
+console.log(t_cinco([-2,12,-16,6,9]));
+
+
+function t_seis(x){
+    var contpar=0;
+    var contimpar=0; 
+    if (x.length>=2){
+      for(var i=0;i<x.length;i++){
+          if(x[i]%2==0){
+            contpar++;
+            contimpar=0;
+            if (contpar==3){
+              console.log('Es para bien');
+            }
+          }
+        else
+          {
+            contpar=0;
+            contimpar++;
+            if (contimpar==3){
+              console.log('Que imparcial');
+            }
+          }
+       }
+      
+    }   
+}
+t_seis([2,3,5,9,7,9]);
+
+
+
+function t_siete(x){
+      for(var i=0;i<x.length;i++){
+          if (i%2!=0){
+		x[i]=x[i]+1;
+		}
+       }
+  return x;
+}   
+console.log(t_siete([-2,12,-16,6,9]));
+
+
+function t_ocho(x){
+    var arr=[];  
+    if (x.length>=2){
+      arr.push(x[0]);
+      for(var i=1;i<x.length;i++){
+        arr.push(x[i].length);
+      }
+    }   
+  return arr;
+}
+
+console.log(t_ocho(['programar','dojo','genial']));
+
+
+
+function t_nueve(x){
+    var arr=[];  
+    for(var i=0;i<x.length;i++){
+       arr.push(x[i]+7);
+    }    
+  return arr;
+}
+
+console.log(t_nueve([1,2,3]));
+
+
+function t_diez(x){
+    var arr=[];  
+    for(var i=x.length-1;i>=0;i--){
+       arr.push(x[i]);
+    }    
+  return arr;
+}
+
+console.log(t_diez([1,2,3,8,9,0]));
+
+
+function t_once(x){
+    var arr=[];  
+    for(var i=0;i<x.length;i++){
+       x[i]=x[i]*-1;
+    }    
+  return x;
+}
+
+console.log(t_once([1,2,3,8,9,0]));
+
+
+function t_doce(x){
+    var arr=[];  
+    for(var i=0;i<x.length;i++){
+       if(x[i]=='comida'){
+	console.log('yummy');
+	}
+	else
+	{
+	console.log('tengo hambre');
+	}
+    }    
+}
+
+t_doce(['comida','3','5']);
+
+
+
+function t_trece(x){
+    var temp;
+    if (x.length>4){		  
+	temp=x[0];
+        x[0]=x[x.length-1];
+	x[x.length-1]=temp;    
+    	temp=x[2];
+	x[2]=x[x.length-3];
+	x[x.length-3]=temp;
+      }  
+  console.log(x);
+}
+
+t_trece([1, 2, 3, 4, 5,6]);
+
+
+function t_catorce(x,y){
+    var arr=[];
+    for (var i=0;i<x.length;i++){
+	arr.push(x[i]*y);
+    }
+    return arr;
+}
+
+console.log(t_catorce([1, 2, 3, 4, 5,6],8));
